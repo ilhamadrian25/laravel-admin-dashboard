@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Authentication
+use App\Http\Controllers\Auth\LoginController as Login;
+use App\Http\Controllers\Auth\ForgotPasswordController as ForgotPassword;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Frontend
+
+// Authentication
+Route::get('/login', [Login::class, 'index'])->name('login');
+Route::get('/forgot-password', [ForgotPassword::class, 'index'])->name('forgot-password');
